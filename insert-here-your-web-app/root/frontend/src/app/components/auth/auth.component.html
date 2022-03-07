@@ -1,27 +1,26 @@
-<div class="row">
-  <div class="col-xs-12 col-md-6 col-md-offset-3">
-    <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
-      <div *ngIf="fail1" class="alert alert-danger" role="alert"> Wrong Email or Password</div>
-      <div *ngIf="fail2" class="alert alert-danger" role="alert">Server has a problem</div>
-      <div *ngIf="fail3" class="alert alert-danger" role="alert">Email already registered</div>
-      <div *ngIf="fail4" class="alert alert-danger" role="alert">Password must contain:
-        <ul>
-          <li>
+<div class="row" x132863171833-x-test-tpl-1>  <div class="col-xs-12 col-md-6 col-md-offset-3" x132863171833-x-test-hook-2>
+    <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" x132863171833-x-test-hook-3>
+      <div *ngIf="fail1" class="alert alert-danger" role="alert" x132863171833-x-test-hook-4> Wrong Email or Password</div>
+      <div *ngIf="fail2" class="alert alert-danger" role="alert" x132863171833-x-test-hook-5>Server has a problem</div>
+      <div *ngIf="fail3" class="alert alert-danger" role="alert" x132863171833-x-test-hook-6>Email already registered</div>
+      <div *ngIf="fail4" class="alert alert-danger" role="alert" x132863171833-x-test-hook-7>Password must contain:
+        <ul x132863171833-x-test-hook-8>
+          <li x132863171833-x-test-hook-9>
             A number
           </li>
-          <li>
+          <li x132863171833-x-test-hook-10>
             Atleast 6 characters
           </li>
-          <li>
+          <li x132863171833-x-test-hook-11>
             Atleast one uppercase char
           </li>
         </ul>
       </div>
 
-      <div *ngIf="authForm.dirty && authForm.invalid" style="color: red">Email o password invalida</div>
+      <div *ngIf="authForm.dirty && authForm.invalid" style="color: red" x132863171833-x-test-hook-12>Email o password invalida</div>
 
-      <div class="form-group">
-        <label for="email">E-Mail</label>
+      <div class="form-group" x132863171833-x-test-hook-13>
+        <label for="email" x132863171833-x-test-hook-14>E-Mail</label>
         <input
           type="email"
           id="email"
@@ -30,11 +29,11 @@
           name="email"
           required
           email
-        />
+        x132863171833-x-test-hook-15 />
       </div>
 
-      <div class="form-group">
-        <label for="passwordInput">Password</label>
+      <div class="form-group" x132863171833-x-test-hook-16>
+        <label for="passwordInput" x132863171833-x-test-hook-17>Password</label>
         <input
           type="password"
           id="passwordInput"
@@ -43,18 +42,18 @@
           name="password"
           required
           minlength="6"
-        />
+        x132863171833-x-test-hook-18 />
       </div>
-      <div>
+      <div x132863171833-x-test-hook-19>
         <button
           class="btn btn-primary"
           type="submit"
           [disabled]="!authForm.valid"
-        >
+         x132863171833-x-test-hook-20>
           {{ isLoginMode ? 'Login' : 'Sign Up' }}
         </button>
         |
-        <button class="btn btn-primary" (click)="onSwitchMode()" type="button">
+        <button class="btn btn-primary" (click)="onSwitchMode()" type="button" x132863171833-x-test-hook-21>
           Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}
         </button>
       </div>
