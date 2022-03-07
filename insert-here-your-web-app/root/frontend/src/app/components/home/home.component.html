@@ -1,0 +1,5 @@
+<div *ngIf="authService.isUserAuthenticated()">
+  <h1 x184746344665-x-test-tpl-1>Bentornato {{authService.user.getValue().getEmail()}}!</h1>
+  <h5>Ecco qui gli ultimi 5 libri inseriti nel nostro elenco!</h5>
+  <app-booklist [booksToDisplay]="'5'"></app-booklist>
+</div>
