@@ -1,4 +1,4 @@
-Strumento Generale sviluppato nella tesi di laurea.
+Strumento Generale sviluppato nella tesi di laurea. 
 
 Per configurarlo su di una propria applicazione web, seguire i seguenti passi:
 
