@@ -1,5 +1,4 @@
-<ul x132880204046-x-test-tpl-1>  <div class="card" x132880204046-x-test-hook-2>
-    <div *ngIf="success" class="alert alert-success" role="alert" x132880204046-x-test-hook-3>
+<ul x132880204046-x-test-tpl-1>  <div class="card" x132880204046-x-test-hook-2>    <div *ngIf="success" class="alert alert-success" role="alert" x132880204046-x-test-hook-3>
       Ordine rimosso correttamente
     </div>
     <li *ngFor="let item of orders" class="list-group-item d-flex justify-content-between align-items-center"
@@ -11,9 +10,9 @@
         <p class="card-text" x132880204046-x-test-hook-9>Purchased quantity : {{item.quantity}}</p>
         <p class="card-text" x132880204046-x-test-hook-10>Date of purchase : {{item.date}}</p>
         <p style="color: green" *ngIf="item.shipped" class="card-text" x132880204046-x-test-hook-11>Order shipped! <img
-          src="https://img.icons8.com/material-outlined/24/000000/shipped.png" x132880204046-x-test-hook-12/></p>
+          src="https://img.icons8.com/material-outlined/24/000000/shipped.png" x132880204046-x-test-hook-12></p>
         <p style="color: red" *ngIf="!item.shipped" class="card-text" x132880204046-x-test-hook-13>Order not yet shipped :( <img
-          src="https://img.icons8.com/material-rounded/24/000000/order-history.png" x132880204046-x-test-hook-14/></p>
+          src="https://img.icons8.com/material-rounded/24/000000/order-history.png" x132880204046-x-test-hook-14></p>
         <button *ngIf="!item.shipped" class="btn btn-primary" (click)="deleteOrder(item)" x132880204046-x-test-hook-15>Delete order</button>
       </div>
     </li>
