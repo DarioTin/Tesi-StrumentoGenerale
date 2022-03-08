@@ -21,7 +21,8 @@ INSERT INTO `orders` (`id`, `email`, `isbn`, `quantity`, `date`,`shipped`) VALUE
 (14, 'dario.tintore3@gmail.com', '9788800222372', 1, '2022-03-02 11:48:27', true),
 (15, 'dario.tintore3@gmail.com', '9788800222373', 1, '2022-03-02 11:48:38', true),
 (16, 'dario.tintore3@gmail.com', '9788800222373', 1, '2022-03-02 15:05:57', true),
-(17, 'test@test.com','9788800222373', 1, '2022-03-02 15:05:57', false);
+(17, 'test@test.com','9788800222373', 1, '2022-03-02 15:05:57', false),
+(18, 'test@test.com','9788800222373', 1, '2022-04-02 15:05:57', false);
 
 INSERT INTO `users` (`userid`, `email`, `firstname`, `lastname`, `password`) VALUES
 (1000, 'dariotintore2@gmail.com', NULL, NULL, '$2a$10$eKZFn0Ja5kCJSYJqAPMNu.eAWhnSWDSJ80aGbk0nC55cURrF4UTTK'),
