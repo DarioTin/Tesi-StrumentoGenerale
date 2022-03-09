@@ -5,6 +5,7 @@ package com.example.TesiIntegrazioneProgettoEsterno;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.*;
+import org.openqa.selenium.support.ui.Select;
 
 import static org.junit.Assert.*;
 import org.openqa.selenium.*;
