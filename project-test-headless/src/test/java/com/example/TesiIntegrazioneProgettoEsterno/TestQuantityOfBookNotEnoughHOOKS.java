@@ -3,6 +3,11 @@ package com.example.PurchasesHOOKS;
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
+<<<<<<< HEAD:project-test-headless/src/test/java/com/example/TestQuantityOfBookNotEnoughHOOKS.java
+=======
+import org.openqa.selenium.support.ui.Select;
+
+>>>>>>> bf5bbec50146e8bc65eb3f5b61384b51056a4946:project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno/TestQuantityOfBookNotEnoughHOOKS.java
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 import org.openqa.selenium.*;
@@ -10,6 +15,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.apache.commons.io.FileUtils;
 import java.io.File;
+import org.openqa.selenium.support.ui.Select;
 
 public class TestQuantityOfBookNotEnoughHOOKS {
   private WebDriver driver;

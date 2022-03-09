@@ -2,6 +2,11 @@ package com.example.PurchasesHOOKS;
 
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
+<<<<<<< HEAD:project-test-headless/src/test/java/com/example/TestPurchaseAllQuantitiesHOOKS.java
+=======
+import org.openqa.selenium.support.ui.Select;
+
+>>>>>>> bf5bbec50146e8bc65eb3f5b61384b51056a4946:project-test-headless/src/test/java/com/example/TesiIntegrazioneProgettoEsterno/TestPurchaseAllQuantitiesHOOKS.java
 import org.junit.*;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
