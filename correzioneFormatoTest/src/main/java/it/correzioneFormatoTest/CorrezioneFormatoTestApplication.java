@@ -90,6 +90,7 @@ public class CorrezioneFormatoTestApplication {
 				+ "import static org.junit.Assert.*;\n"
 				+ "import org.openqa.selenium.*;\n"
 				+ "import org.openqa.selenium.chrome.ChromeDriver;\n"
+				+ "import org.openqa.selenium.support.ui.Select;\n"
 				+ "import org.openqa.selenium.chrome.ChromeOptions;\n";
 
 		
