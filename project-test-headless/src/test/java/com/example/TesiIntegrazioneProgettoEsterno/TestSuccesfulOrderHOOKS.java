@@ -36,8 +36,12 @@ public class TestSuccesfulOrderHOOKS {
     driver.findElement(By.xpath("//*[@x132889409660-x-test-tpl-1]//*[@x132889409660-x-test-hook-9]//*[@x132846648928-x-test-tpl-2]//*[@x132846648928-x-test-hook-4]//*[@x132863171833-x-test-tpl-1]//*[@x132863171833-x-test-hook-18]")).clear();
     driver.findElement(By.xpath("//*[@x132889409660-x-test-tpl-1]//*[@x132889409660-x-test-hook-9]//*[@x132846648928-x-test-tpl-2]//*[@x132846648928-x-test-hook-4]//*[@x132863171833-x-test-tpl-1]//*[@x132863171833-x-test-hook-18]")).sendKeys("test123");
     driver.findElement(By.xpath("//*[@x132889409660-x-test-tpl-1]//*[@x132889409660-x-test-hook-9]//*[@x132846648928-x-test-tpl-2]//*[@x132846648928-x-test-hook-4]//*[@x132863171833-x-test-tpl-1]//*[@x132863171833-x-test-hook-20]")).click();
-    driver.get("http://localhost:4200/home");
     driver.findElement(By.xpath("//*[@x132889409660-x-test-tpl-1]//*[@x132889409660-x-test-hook-9]//*[@x132846648928-x-test-tpl-1]//*[@x132885434011-x-test-tpl-1]//*[@x132885434011-x-test-hook-12]")).click();
+    acceptNextAlert = true;
+    driver.findElement(By.xpath("//*[@x132889409660-x-test-tpl-1]//*[@x132889409660-x-test-hook-9]//*[@x132846648928-x-test-tpl-2]//*[@x132846648928-x-test-hook-4]//*[@x184759857134-x-test-tpl-1]//*[@x132867596989-x-test-tpl-3]//*[@x132867596989-x-test-hook-5][1]//*[@x132867596989-x-test-hook-25]")).click();
+    assertEquals("Are you sure to buy Divina Commedia - Volume unico. Con Me book e Contenuti Digitali Integrativi online", closeAlertAndGetItsText());
+    driver.findElement(By.xpath("//*[@x132889409660-x-test-tpl-1]//*[@x132889409660-x-test-hook-9]//*[@x132846648928-x-test-tpl-1]//*[@x132885434011-x-test-tpl-1]//*[@x132885434011-x-test-hook-14]")).click();
+    isElementPresent(By.xpath("//*[@x132889409660-x-test-tpl-1]//*[@x132889409660-x-test-hook-9]//*[@x132846648928-x-test-tpl-2]//*[@x132846648928-x-test-hook-4]//*[@x184760422874-x-test-tpl-1]//*[@x132880204046-x-test-tpl-1]//*[@x132880204046-x-test-hook-4][1]//*[@x132880204046-x-test-hook-8]"));
   }
 
   @After
