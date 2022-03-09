@@ -10,6 +10,7 @@ import static org.junit.Assert.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.Select;
 
 public class TestQuantityOfBookNotEnoughTRADITIONAL {
 private static WebDriver driver;
