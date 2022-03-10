@@ -33,7 +33,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
   @Test
-  public void testInvalidPasswordTRADITIONAL() throws Exception {
+  public void testInvalidPassword_release_0_0_1() throws Exception {
     driver.get("http://localhost:4200/auth");
     driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Login'])[1]/following::button[1]")).click();
     driver.findElement(By.id("email")).click();

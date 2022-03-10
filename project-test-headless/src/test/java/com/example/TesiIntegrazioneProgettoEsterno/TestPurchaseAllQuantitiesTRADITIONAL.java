@@ -33,7 +33,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
   @Test
-  public void testPurchaseAllQuantitiesTRADITIONAL() throws Exception {
+  public void testPurchaseAllQuantities_release_0_0_1() throws Exception {
     driver.get("http://localhost:4200/auth");
     driver.findElement(By.id("email")).click();
     driver.findElement(By.id("email")).clear();

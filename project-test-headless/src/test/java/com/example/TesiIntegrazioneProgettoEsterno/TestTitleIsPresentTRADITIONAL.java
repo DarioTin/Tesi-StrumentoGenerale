@@ -33,7 +33,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
   @Test
-  public void testTitleIsPresentTRADITIONAL() throws Exception {
+  public void testTitleIsPresent_release_0_0_1() throws Exception {
     driver.get("http://localhost:4200/home");
     try {
       assertEquals("Book shop", driver.findElement(By.linkText("Book shop")).getText());
