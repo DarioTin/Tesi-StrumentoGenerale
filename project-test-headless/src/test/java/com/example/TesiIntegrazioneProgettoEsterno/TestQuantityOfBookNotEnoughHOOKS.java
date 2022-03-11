@@ -1,4 +1,4 @@
-package com.example.TopbarHOOKS;
+package com.example.PurchasesHOOKS;
 
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.apache.commons.io.FileUtils;
 import java.io.File;
 
-public class TestTopbarForAuthenticatedUsersHOOKS {
+public class TestQuantityOfBookNotEnoughHOOKS {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -21,7 +21,7 @@ public class TestTopbarForAuthenticatedUsersHOOKS {
   @Before
   public void setUp() throws Exception {
     ChromeOptions options = new ChromeOptions();
-    options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
+    options.addArguments("--headless", "--disable-gpu", "--window-size=4500,3200","--ignore-certificate-errors");
     System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
     driver = new ChromeDriver(options);
     baseUrl = "https://www.google.com/";
@@ -30,7 +30,7 @@ public class TestTopbarForAuthenticatedUsersHOOKS {
   }
 
   @Test
-  public void testTopbarForAuthenticatedUsers_loc_Hooks_release_0_0_1() throws Exception {
+  public void testQuantityOfBookNotEnough_loc_Hooks_release_0_0_1() throws Exception {
     driver.get("http://localhost:4200/auth");
     driver.findElement(By.xpath("//*[@x132889409660-x-test-tpl-1]//*[@x132889409660-x-test-hook-9]//*[@x132846648928-x-test-tpl-2]//*[@x132846648928-x-test-hook-4]//*[@x132863171833-x-test-tpl-1]//*[@x132863171833-x-test-hook-15]")).click();
     driver.findElement(By.xpath("//*[@x132889409660-x-test-tpl-1]//*[@x132889409660-x-test-hook-9]//*[@x132846648928-x-test-tpl-2]//*[@x132846648928-x-test-hook-4]//*[@x132863171833-x-test-tpl-1]//*[@x132863171833-x-test-hook-15]")).clear();
@@ -39,21 +39,13 @@ public class TestTopbarForAuthenticatedUsersHOOKS {
     driver.findElement(By.xpath("//*[@x132889409660-x-test-tpl-1]//*[@x132889409660-x-test-hook-9]//*[@x132846648928-x-test-tpl-2]//*[@x132846648928-x-test-hook-4]//*[@x132863171833-x-test-tpl-1]//*[@x132863171833-x-test-hook-18]")).clear();
     driver.findElement(By.xpath("//*[@x132889409660-x-test-tpl-1]//*[@x132889409660-x-test-hook-9]//*[@x132846648928-x-test-tpl-2]//*[@x132846648928-x-test-hook-4]//*[@x132863171833-x-test-tpl-1]//*[@x132863171833-x-test-hook-18]")).sendKeys("test123");
     driver.findElement(By.xpath("//*[@x132889409660-x-test-tpl-1]//*[@x132889409660-x-test-hook-9]//*[@x132846648928-x-test-tpl-2]//*[@x132846648928-x-test-hook-4]//*[@x132863171833-x-test-tpl-1]//*[@x132863171833-x-test-hook-20]")).click();
-    try {
-      assertEquals("Logout", driver.findElement(By.xpath("//*[@x132889409660-x-test-tpl-1]//*[@x132889409660-x-test-hook-9]//*[@x132846648928-x-test-tpl-1]//*[@x132885434011-x-test-tpl-1]//*[@x132885434011-x-test-hook-16]")).getText());
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
-    }
-    try {
-      assertEquals("Orders", driver.findElement(By.xpath("//*[@x132889409660-x-test-tpl-1]//*[@x132889409660-x-test-hook-9]//*[@x132846648928-x-test-tpl-1]//*[@x132885434011-x-test-tpl-1]//*[@x132885434011-x-test-hook-14]")).getText());
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
-    }
-    try {
-      assertEquals("Books", driver.findElement(By.xpath("//*[@x132889409660-x-test-tpl-1]//*[@x132889409660-x-test-hook-9]//*[@x132846648928-x-test-tpl-1]//*[@x132885434011-x-test-tpl-1]//*[@x132885434011-x-test-hook-12]")).getText());
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
-    }
+    driver.findElement(By.xpath("//*[@x132889409660-x-test-tpl-1]//*[@x132889409660-x-test-hook-9]//*[@x132846648928-x-test-tpl-1]//*[@x132885434011-x-test-tpl-1]//*[@x132885434011-x-test-hook-12]")).click();
+    driver.findElement(By.xpath("//*[@x132889409660-x-test-tpl-1]//*[@x132889409660-x-test-hook-9]//*[@x132846648928-x-test-tpl-2]//*[@x132846648928-x-test-hook-4]//*[@x184759857134-x-test-tpl-1]//*[@x132867596989-x-test-tpl-3]//*[@x132867596989-x-test-hook-5][6]//*[@x132867596989-x-test-hook-14]")).click();
+    acceptNextAlert = true;
+    new Select(driver.findElement(By.xpath("//*[@x132889409660-x-test-tpl-1]//*[@x132889409660-x-test-hook-9]//*[@x132846648928-x-test-tpl-2]//*[@x132846648928-x-test-hook-4]//*[@x184759857134-x-test-tpl-1]//*[@x132867596989-x-test-tpl-3]//*[@x132867596989-x-test-hook-5][6]//*[@x132867596989-x-test-hook-14]"))).selectByVisibleText("3");
+    driver.findElement(By.xpath("//*[@x132889409660-x-test-tpl-1]//*[@x132889409660-x-test-hook-9]//*[@x132846648928-x-test-tpl-2]//*[@x132846648928-x-test-hook-4]//*[@x184759857134-x-test-tpl-1]//*[@x132867596989-x-test-tpl-3]//*[@x132867596989-x-test-hook-5][6]//*[@x132867596989-x-test-hook-25]")).click();
+    assertEquals("Are you sure to buy Il principe", closeAlertAndGetItsText());
+    isElementPresent(By.xpath("//*[@x132889409660-x-test-tpl-1]//*[@x132889409660-x-test-hook-9]//*[@x132846648928-x-test-tpl-2]//*[@x132846648928-x-test-hook-4]//*[@x184759857134-x-test-tpl-1]//*[@x132867596989-x-test-tpl-2]"));
   }
 
   @After

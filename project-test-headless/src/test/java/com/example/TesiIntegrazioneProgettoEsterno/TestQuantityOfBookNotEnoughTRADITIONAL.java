@@ -1,4 +1,4 @@
-package com.example.TopbarHOOKS;
+package com.example.PurchasesTRADITIONAL;
 
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
@@ -12,7 +12,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.apache.commons.io.FileUtils;
 import java.io.File;
 
-public class TestTitleIsPresentHOOKS {
+public class TestQuantityOfBookNotEnoughTRADITIONAL {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -21,7 +21,7 @@ public class TestTitleIsPresentHOOKS {
   @Before
   public void setUp() throws Exception {
     ChromeOptions options = new ChromeOptions();
-    options.addArguments("--headless", "--disable-gpu", "--window-size=1920,1200","--ignore-certificate-errors");
+    options.addArguments("--headless", "--disable-gpu", "--window-size=4500,3200","--ignore-certificate-errors");
     System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
     driver = new ChromeDriver(options);
     baseUrl = "https://www.google.com/";
@@ -30,14 +30,22 @@ public class TestTitleIsPresentHOOKS {
   }
 
   @Test
-  public void testTitleIsPresent_loc_Hooks_release_0_0_1() throws Exception {
+  public void testQuantityOfBookNotEnough_release_0_0_1() throws Exception {
     driver.get("http://localhost:4200/auth");
-    driver.findElement(By.xpath("//*[@x132889409660-x-test-tpl-1]//*[@x132889409660-x-test-hook-9]//*[@x132846648928-x-test-tpl-1]//*[@x132885434011-x-test-tpl-1]//*[@x132885434011-x-test-hook-8]")).click();
-    try {
-      assertEquals("Book shop", driver.findElement(By.xpath("//*[@x132889409660-x-test-tpl-1]//*[@x132889409660-x-test-hook-9]//*[@x132846648928-x-test-tpl-1]//*[@x132885434011-x-test-tpl-1]//*[@x132885434011-x-test-hook-2]")).getText());
-    } catch (Error e) {
-      verificationErrors.append(e.toString());
-    }
+    driver.findElement(By.id("email")).click();
+    driver.findElement(By.id("email")).clear();
+    driver.findElement(By.id("email")).sendKeys("test@test.com");
+    driver.findElement(By.id("passwordInput")).click();
+    driver.findElement(By.id("passwordInput")).clear();
+    driver.findElement(By.id("passwordInput")).sendKeys("test123");
+    driver.findElement(By.xpath("//button[@type='submit']")).click();
+    driver.findElement(By.linkText("Books")).click();
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Il principe, Macchiavelli, Niccolo, Liberamente'])[1]/following::select[1]")).click();
+    acceptNextAlert = true;
+    new Select(driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Il principe, Macchiavelli, Niccolo, Liberamente'])[1]/following::select[1]"))).selectByVisibleText("4");
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Il principe, Macchiavelli, Niccolo, Liberamente'])[1]/following::button[1]")).click();
+    assertEquals("Are you sure to buy Il principe", closeAlertAndGetItsText());
+    isElementPresent(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Logout'])[1]/following::div[4]"));
   }
 
   @After
