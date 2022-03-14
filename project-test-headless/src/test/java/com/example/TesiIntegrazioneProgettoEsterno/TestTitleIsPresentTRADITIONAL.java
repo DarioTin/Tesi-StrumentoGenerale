@@ -33,10 +33,10 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
   @Test
-  public void testTitleIsPresent_release_0_0_1() throws Exception {
+  public void testTitleIsPresent_release_0_0_2() throws Exception {
     driver.get("http://localhost:4200/home");
     try {
-      assertEquals("Book Market", driver.findElement(By.linkText("Book shop")).getText());
+      assertEquals("Book Market", driver.findElement(By.linkText("Book Market")).getText());
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
