@@ -12,7 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class TestSignupWithNoNumberPasswordTRADITIONAL {
+public class TestLayoutIsWorkingTRADITIONAL {
 private static WebDriver driver;
 private boolean acceptNextAlert = true;
 private static StringBuffer verificationErrors = new StringBuffer();
@@ -33,16 +33,29 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
   @Test
-  public void testSignupWithNoNumberPassword_release_0_0_3() throws Exception {
+  public void testLayoutIsWorking_release_0_0_1() throws Exception {
     driver.get("http://localhost:4200/auth");
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Login'])[2]/following::button[1]")).click();
-    driver.findElement(By.xpath("//app-root")).click();
-    driver.findElement(By.id("email")).clear();
-    driver.findElement(By.id("email")).sendKeys("test@test.com");
-    driver.findElement(By.id("passwordInput")).clear();
-    driver.findElement(By.id("passwordInput")).sendKeys("testtt");
-    driver.findElement(By.xpath("//button[@type='submit']")).click();
-    isElementPresent(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Sign up'])[1]/following::li[1]"));
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Login'])[1]/following::button[1]")).click();
+    try {
+      assertEquals("E-Mail", driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Auth'])[1]/following::label[1]")).getText());
+    } catch (Error e) {
+      verificationErrors.append(e.toString());
+    }
+    try {
+      assertEquals("Password", driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='E-Mail'])[1]/following::label[1]")).getText());
+    } catch (Error e) {
+      verificationErrors.append(e.toString());
+    }
+    try {
+      assertEquals("", driver.findElement(By.id("passwordInput")).getAttribute("value"));
+    } catch (Error e) {
+      verificationErrors.append(e.toString());
+    }
+    try {
+      assertEquals("", driver.findElement(By.id("email")).getAttribute("value"));
+    } catch (Error e) {
+      verificationErrors.append(e.toString());
+    }
   }
 
 

@@ -33,11 +33,10 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
   @Test
-  public void testLayoutIsWorking_release_0_0_1() throws Exception {
+  public void testLayoutIsWorking_release_0_0_3() throws Exception {
     driver.get("http://localhost:4200/auth");
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Login'])[1]/following::button[1]")).click();
     try {
-      assertEquals("E-Mail", driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Auth'])[1]/following::label[1]")).getText());
+      assertEquals("E-Mail", driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Login'])[1]/following::label[1]")).getText());
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
@@ -47,12 +46,12 @@ private static StringBuffer verificationErrors = new StringBuffer();
       verificationErrors.append(e.toString());
     }
     try {
-      assertEquals("", driver.findElement(By.id("passwordInput")).getAttribute("value"));
+      assertEquals("", driver.findElement(By.id("email")).getAttribute("value"));
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }
     try {
-      assertEquals("", driver.findElement(By.id("email")).getAttribute("value"));
+      assertEquals("", driver.findElement(By.id("passwordInput")).getAttribute("value"));
     } catch (Error e) {
       verificationErrors.append(e.toString());
     }

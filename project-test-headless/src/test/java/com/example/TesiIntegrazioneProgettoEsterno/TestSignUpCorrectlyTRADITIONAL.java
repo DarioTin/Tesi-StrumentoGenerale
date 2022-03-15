@@ -33,12 +33,17 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
   @Test
-  public void testSignUpCorrectly_release_0_0_1() throws Exception {
+  public void testSignUpCorrectly_release_0_0_3() throws Exception {
     driver.get("http://localhost:4200/auth");
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Login'])[1]/following::button[1]")).click();
-    driver.findElement(By.id("email")).click();
+    driver.findElement(By.id("email")).clear();
+    driver.findElement(By.id("email")).sendKeys("dario.tintore3@gmail.com");
+    driver.findElement(By.id("passwordInput")).clear();
+    driver.findElement(By.id("passwordInput")).sendKeys("test123");
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Login'])[2]/following::button[1]")).click();
+    driver.findElement(By.xpath("//app-root")).click();
     driver.findElement(By.id("email")).clear();
     driver.findElement(By.id("email")).sendKeys("testing@test.com");
+    driver.findElement(By.xpath("//app-root")).click();
     driver.findElement(By.id("passwordInput")).clear();
     driver.findElement(By.id("passwordInput")).sendKeys("Test123");
     driver.findElement(By.xpath("//button[@type='submit']")).click();

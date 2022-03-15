@@ -33,16 +33,17 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
   @Test
-  public void testSignupWithNoUppercasePassword_release_0_0_1() throws Exception {
+  public void testSignupWithNoUppercasePassword_release_0_0_3() throws Exception {
     driver.get("http://localhost:4200/auth");
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Login'])[1]/following::button[1]")).click();
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Login'])[2]/following::button[1]")).click();
     driver.findElement(By.id("email")).click();
     driver.findElement(By.id("email")).clear();
     driver.findElement(By.id("email")).sendKeys("test@test.com");
+    driver.findElement(By.id("passwordInput")).click();
     driver.findElement(By.id("passwordInput")).clear();
-    driver.findElement(By.id("passwordInput")).sendKeys("test123");
+    driver.findElement(By.id("passwordInput")).sendKeys("testttt");
     driver.findElement(By.xpath("//button[@type='submit']")).click();
-    isElementPresent(By.cssSelector("div.alert.alert-danger"));
+    isElementPresent(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Atleast 6 characters'])[1]/following::li[1]"));
   }
 
 
