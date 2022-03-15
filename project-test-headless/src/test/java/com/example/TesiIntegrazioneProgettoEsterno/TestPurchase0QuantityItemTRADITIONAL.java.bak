@@ -25,7 +25,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
 		  System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 		  System.setProperty("webdriver.chrome.whitelistedIps", "");
 		  ChromeOptions options = new ChromeOptions();
-		  options.addArguments("--headless", "--disable-gpu", "--window-size=1888,3365","--no-sandbox","--ignore-certificate-errors");
+		  options.addArguments("--headless", "--disable-gpu", "--window-size=4500,3200","--no-sandbox","--ignore-certificate-errors");
 		  driver = new ChromeDriver(options);  
 		  
 		  
