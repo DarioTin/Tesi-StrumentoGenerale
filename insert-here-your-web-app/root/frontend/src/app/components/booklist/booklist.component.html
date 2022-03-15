@@ -1,34 +1,59 @@
-<div *ngIf="success" class="alert alert-success" role="alert" x132867596989-x-test-tpl-1>  Acquisto effettuato correttamente</div><div *ngIf="fail" class="alert alert-danger" role="alert" x132867596989-x-test-tpl-2>  Quantità non disponibile</div><ul  x132867596989-x-test-tpl-3>  <div class="card"  x132867596989-x-test-hook-4>    <li *ngFor="let item of books" class="list-group-item d-flex justify-content-between align-items-center"         x132867596989-x-test-hook-5>      <div class="card-header"  x132867596989-x-test-hook-6><img src="{{item.img}}" width="150" height="250"                                                                class="img-thumbnail"  x132867596989-x-test-hook-7></div>
-      <div class="card-body"  x132867596989-x-test-hook-8>
+<ul x132867596989-x-test-tpl-3>
+  <li *ngFor="let item of books" class="list-group-item d-flex justify-content-between align-items-center"
+      x132867596989-x-test-hook-5>
+    <div class="card" x132867596989-x-test-hook-4 style="width: 100%">
+      <div class="card-header" x132867596989-x-test-hook-6>{{item.title}}</div>
 
-        <h5 class="card-title"  x132867596989-x-test-hook-9>{{item.title}}, {{item.author}}, {{item.publisher}} </h5>
-        <p x132867596989-x-test-hook-10> Quantity: {{item.quantity}} </p>
-
-        <div *ngIf="booksToDisplay==''" style="display: inline-block" x132867596989-x-test-hook-11>
-          <div class="row" x132867596989-x-test-hook-12>
-            <div class="col" style="width: auto;" x132867596989-x-test-hook-13>
-              <select (change)="changeQuantity($event)" class="form-select" aria-label="Default select example" x132867596989-x-test-hook-14>
-                <option selected value="1" x132867596989-x-test-hook-15>1</option>
-                <option value="2" x132867596989-x-test-hook-16>2</option>
-                <option value="3" x132867596989-x-test-hook-17>3</option>
-                <option value="4" x132867596989-x-test-hook-18>4</option>
-                <option value="5" x132867596989-x-test-hook-19>5</option>
-                <option value="6" x132867596989-x-test-hook-20>6</option>
-                <option value="7" x132867596989-x-test-hook-21>7</option>
-                <option value="8" x132867596989-x-test-hook-22>8</option>
-                <option value="9" x132867596989-x-test-hook-23>9</option>
-              </select>
+      <div class="card-body" x132867596989-x-test-hook-8>
+        <div class="row">
+          <div class="col-sm-2">
+            <img src="{{item.img}}"
+                 class="img-thumbnail" style="width: 150px; height: 250px" x132867596989-x-test-hook-7>
+          </div>
+          <div class="col">
+            <div class="row">
+              <h5 x132867596989-x-test-hook-9> {{item.author}}, {{item.publisher}} </h5>
             </div>
-            <div class="col" x132867596989-x-test-hook-24>
-              <button class="btn btn-primary" (click)="clickMethod(item)"
-                       x132867596989-x-test-hook-25>Buy
-              </button>
+            <div class="row">
+              <div class="col">
+                <div class="row">
+                  <p x132867596989-x-test-hook-10> Quantity: {{item.quantity}} </p>
+                </div>
+                <div class="row" x132867596989-x-test-hook-12>
+                  <div *ngIf="booksToDisplay==''" style="display: inline-block" x132867596989-x-test-hook-11>
+                    <div class="col" style="width: auto;" x132867596989-x-test-hook-13>
+                      <div class="row">
+                        <div class="col">
+                          <select style="width: auto" (change)="changeQuantity($event)" class="form-select"
+                                  aria-label="Default select example"
+                                  x132867596989-x-test-hook-14>
+                            <option selected value="1" x132867596989-x-test-hook-15>1</option>
+                            <option value="2" x132867596989-x-test-hook-16>2</option>
+                            <option value="3" x132867596989-x-test-hook-17>3</option>
+                            <option value="4" x132867596989-x-test-hook-18>4</option>
+                            <option value="5" x132867596989-x-test-hook-19>5</option>
+                            <option value="6" x132867596989-x-test-hook-20>6</option>
+                            <option value="7" x132867596989-x-test-hook-21>7</option>
+                            <option value="8" x132867596989-x-test-hook-22>8</option>
+                            <option value="9" x132867596989-x-test-hook-23>9</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <button class="btn btn-primary" (click)="clickMethod(item)"
+                                x132867596989-x-test-hook-25>Buy
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+              </div>
             </div>
-
           </div>
         </div>
-
       </div>
-    </li>
-  </div>
+    </div>
+  </li>
 </ul>

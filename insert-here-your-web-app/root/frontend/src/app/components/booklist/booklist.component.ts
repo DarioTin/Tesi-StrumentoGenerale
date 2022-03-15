@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {BookService} from "./book.service";
 import {Book} from "../../model/book.model";
 import {OrderService} from "../orderlist/order.service";
@@ -8,6 +8,8 @@ import {AuthService} from "../auth/auth.service";
   selector: 'app-booklist', templateUrl: './booklist.component.html', styleUrls: ['./booklist.component.css']
 })
 export class BooklistComponent implements OnInit {
+
+  @Output() notifyPurchase: EventEmitter<any> = new EventEmitter();
 
   // @ts-ignore
   books: any[];
@@ -29,9 +31,9 @@ export class BooklistComponent implements OnInit {
     if (confirm("Are you sure to buy " + book.title)) {
       this.orderService.makeOrder(this.authService.user.getValue().getEmail(), this.authService.user.getValue().getToken(), book.isbn, this.quantity).subscribe(response => {
         this.updateBooks();
-        this.success = true;
+        this.notifyPurchase.emit(1);
       }, error => {
-        this.fail = true;
+        this.notifyPurchase.emit(0);
       });
     }
   }
