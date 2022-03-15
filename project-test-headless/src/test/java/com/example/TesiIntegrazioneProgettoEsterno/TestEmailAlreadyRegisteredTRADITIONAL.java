@@ -46,7 +46,6 @@ private static StringBuffer verificationErrors = new StringBuffer();
     isElementPresent(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Sign up'])[1]/following::div[4]"));
   }
 
-
  @After
 	  public void tearDown() throws Exception {
 	    driver.quit();
