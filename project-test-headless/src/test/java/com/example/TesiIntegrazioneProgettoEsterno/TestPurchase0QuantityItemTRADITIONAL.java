@@ -25,7 +25,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
 		  System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 		  System.setProperty("webdriver.chrome.whitelistedIps", "");
 		  ChromeOptions options = new ChromeOptions();
-		  options.addArguments("--headless", "--disable-gpu", "--window-size=1888,3365","--no-sandbox","--ignore-certificate-errors");
+		  options.addArguments("--headless", "--disable-gpu", "--window-size=4500,4500","--no-sandbox","--ignore-certificate-errors");
 		  driver = new ChromeDriver(options);  
 		  
 		  
@@ -33,20 +33,19 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
   @Test
-  public void testPurchase0QuantityItem_release_0_0_1() throws Exception {
+  public void testPurchase0QuantityItem_release_0_0_4() throws Exception {
     driver.get("http://localhost:4200/auth");
-    driver.findElement(By.id("email")).click();
+    driver.findElement(By.xpath("//app-root")).click();
     driver.findElement(By.id("email")).clear();
     driver.findElement(By.id("email")).sendKeys("test@test.com");
-    driver.findElement(By.id("passwordInput")).click();
     driver.findElement(By.id("passwordInput")).clear();
     driver.findElement(By.id("passwordInput")).sendKeys("test123");
     driver.findElement(By.xpath("//button[@type='submit']")).click();
     driver.findElement(By.linkText("Books")).click();
     acceptNextAlert = true;
-    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='L Eneide, Virgilio, Sansoni'])[1]/following::button[1]")).click();
+    driver.findElement(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Virgilio, Sansoni'])[1]/following::button[1]")).click();
     assertEquals("Are you sure to buy L Eneide", closeAlertAndGetItsText());
-    isElementPresent(By.xpath("(.//*[normalize-space(text()) and normalize-space(.)='Logout'])[1]/following::div[4]"));
+    isElementPresent(By.xpath("//div[@id='footer']/div"));
   }
 
 
