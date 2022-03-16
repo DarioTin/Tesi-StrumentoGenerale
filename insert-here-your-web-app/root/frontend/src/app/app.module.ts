@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {MatDialogModule} from '@angular/material/dialog';
 import { AppComponent } from './app.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { TopbarComponent } from './components/topbar/topbar.component';
@@ -14,6 +14,9 @@ import { BookrouteComponent } from './routes/bookroute/bookroute.component';
 import {CommonModule} from "@angular/common";
 import { OrdersRouteComponent } from './routes/orders-route/orders-route.component';
 import { OrderlistComponent } from './components/orderlist/orderlist.component';
+import { BookdetailsComponent } from './components/bookdetails/bookdetails.component';
+import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
+import {MatFormFieldModule} from "@angular/material/form-field";
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { OrderlistComponent } from './components/orderlist/orderlist.component';
     BooklistComponent,
     BookrouteComponent,
     OrdersRouteComponent,
-    OrderlistComponent
+    OrderlistComponent,
+    BookdetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +36,10 @@ import { OrderlistComponent } from './components/orderlist/orderlist.component';
     FormsModule,
     HttpClientModule,
     CommonModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    MatFormFieldModule,
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

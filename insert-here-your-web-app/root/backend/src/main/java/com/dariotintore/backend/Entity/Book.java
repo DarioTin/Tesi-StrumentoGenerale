@@ -21,6 +21,16 @@ public class Book {
     private int quantity;
     @Column(name = "img")
     private String img;
+    @Column(name = "description")
+    private String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public String getImg() {
         return img;

@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {OrderService} from "./order.service";
 import {formatDate} from "@angular/common";
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 @Component({
   selector: 'app-orderlist',

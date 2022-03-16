@@ -3,6 +3,8 @@ import {BookService} from "./book.service";
 import {Book} from "../../model/book.model";
 import {OrderService} from "../orderlist/order.service";
 import {AuthService} from "../auth/auth.service";
+import {BookdetailsComponent} from "../bookdetails/bookdetails.component";
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-booklist', templateUrl: './booklist.component.html', styleUrls: ['./booklist.component.css']
@@ -19,7 +21,7 @@ export class BooklistComponent implements OnInit {
   success: boolean = false;
   fail: boolean = false;
 
-  constructor(private bookService: BookService, private orderService: OrderService, private authService: AuthService) {
+  constructor(private bookService: BookService, private orderService: OrderService, private authService: AuthService, public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -55,8 +57,14 @@ export class BooklistComponent implements OnInit {
     this.quantity = event.target.value;
   }
 
-  resetMessages(){
+  resetMessages() {
     this.success = false;
     this.fail = false;
+  }
+
+  showDialog(book: { title: any; description: any; author: any, publisher: any }) {
+    this.dialog.open(BookdetailsComponent, {
+      data: book,
+    });
   }
 }

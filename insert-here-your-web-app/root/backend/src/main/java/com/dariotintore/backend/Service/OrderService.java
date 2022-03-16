@@ -84,6 +84,7 @@ public class OrderService {
             bookData.put("author", book.getAuthor());
             bookData.put("publisher", book.getPublisher());
             bookData.put("img", book.getImg());
+            bookData.put("description", book.getDescription());
             bookData.put("date", order.getDate());
             bookData.put("quantity", order.getQuantity());
             bookData.put("shipped", order.isShipped());
