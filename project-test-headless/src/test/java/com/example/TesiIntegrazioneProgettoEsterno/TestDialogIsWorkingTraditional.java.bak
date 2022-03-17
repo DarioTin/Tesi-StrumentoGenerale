@@ -30,7 +30,7 @@ public class TestDialogIsWorkingTraditional {
     }
 
     @Test
-    public void testDialogIsWorkingTraditional_release_0_0_5() throws Exception {
+    public void testDialogIsWorkingTraditional() throws Exception {
         driver.get("http://localhost:4200/auth");
         driver.findElement(By.id("email")).sendKeys("test@test.com");
         driver.findElement(By.id("passwordInput")).clear();
