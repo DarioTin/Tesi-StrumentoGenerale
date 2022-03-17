@@ -33,7 +33,7 @@ private static StringBuffer verificationErrors = new StringBuffer();
 	    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  }
     @Test
-    public void testDialogIsWorkingTraditional() throws Exception {
+    public void testDialogIsWorking_loc_Hooks_release_0_0_5() throws Exception {
         driver.get("http://localhost:4200/auth");
         driver.findElement(By.id("email")).sendKeys("test@test.com");
         driver.findElement(By.id("passwordInput")).clear();
