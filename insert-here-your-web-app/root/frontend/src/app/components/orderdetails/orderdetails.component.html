@@ -1,0 +1,47 @@
+<h2 mat-dialog-title>{{order.title}}</h2>
+<mat-dialog-content class="mat-typography">
+  <div class="card" style="width: 100%">
+    <div class="card-header"> {{order.author}}, {{order.publisher}} </div>
+
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-2">
+          <img src="{{order.img}}"
+               class="img-thumbnail" style="width: 150px; height: 250px">
+        </div>
+        <div class="col">
+          <div class="row">
+            {{order.description}}
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="row">
+                <p> Quantity: {{order.quantity}} </p>
+              </div>
+              <p style="color: green" *ngIf="order.shipped" class="card-text" x132880204046-x-test-hook-11>Order shipped! <img
+                src="https://img.icons8.com/material-outlined/24/000000/shipped.png" x132880204046-x-test-hook-12></p>
+              <p style="color: red" *ngIf="!order.shipped" class="card-text" x132880204046-x-test-hook-13>Order not yet shipped
+                :( <img src="https://img.icons8.com/material-rounded/24/000000/order-history.png"
+                        x132880204046-x-test-hook-14></p>
+              <button *ngIf="!order.shipped" class="btn btn-danger" (click)="deleteOrder(order)" x132880204046-x-test-hook-15>
+                Delete order
+              </button>
+              <div class="row">
+                <div style="display: inline-block">
+                  <div class="col" style="width: auto;">
+                    <div class="row">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">

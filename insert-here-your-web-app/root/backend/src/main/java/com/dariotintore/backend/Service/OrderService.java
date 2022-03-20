@@ -52,8 +52,6 @@ public class OrderService {
         Order order = new Order(isbn, quantity, email, new Date(System.currentTimeMillis()), false);
         orderRepository.save(order);
         if(!isTestingActive(order)){
-            System.out.println(order.getIsbn());
-            System.out.println(order.getEmail());
             subtractQuantity(isbn, quantity);
         }
         return ResponseHelper.buildOkResponse("Order correctly made");
@@ -75,7 +73,6 @@ public class OrderService {
         List<Order> orders = orderRepository.findByEmail(email);
         List<JSONObject> array = new ArrayList<>();
         for (Order order : orders) {
-            System.out.println(order.getIsbn());
             Book book = bookService.findBookByIsbn(order.getIsbn());
             JSONObject bookData = new JSONObject();
             bookData.put("id", order.getId());

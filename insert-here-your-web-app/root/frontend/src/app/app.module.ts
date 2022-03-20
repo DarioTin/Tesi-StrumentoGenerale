@@ -17,6 +17,7 @@ import { OrderlistComponent } from './components/orderlist/orderlist.component';
 import { BookdetailsComponent } from './components/bookdetails/bookdetails.component';
 import {BrowserAnimationsModule, NoopAnimationsModule} from "@angular/platform-browser/animations";
 import {MatFormFieldModule} from "@angular/material/form-field";
+import { OrderdetailsComponent } from './components/orderdetails/orderdetails.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     BookrouteComponent,
     OrdersRouteComponent,
     OrderlistComponent,
-    BookdetailsComponent
+    BookdetailsComponent,
+    OrderdetailsComponent
   ],
   imports: [
     BrowserModule,

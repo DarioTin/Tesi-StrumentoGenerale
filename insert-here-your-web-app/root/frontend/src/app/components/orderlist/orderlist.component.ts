@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {OrderService} from "./order.service";
 import {formatDate} from "@angular/common";
-import {MatDialogModule} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
+import {OrderdetailsComponent} from "../orderdetails/orderdetails.component";
 
 
 @Component({
@@ -15,7 +16,7 @@ export class OrderlistComponent implements OnInit {
   orders: any[];
   success: boolean = false;
 
-  constructor(private orderService: OrderService) {
+  constructor(private orderService: OrderService, public dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -42,4 +43,21 @@ export class OrderlistComponent implements OnInit {
     });
   }
 
+  showDetails(book:  { title: any; description: any; author: any, publisher: any }) {
+
+    let dialogRef = this.dialog.open(OrderdetailsComponent, {
+      data: book,
+    });
+
+    dialogRef.afterClosed().subscribe(result =>{
+      this.updateOrders();
+      if(result == 1){
+        this.success = true;
+      }
+    })
+  }
+
+  notify($event: any) {
+    console.log(event);
+  }
 }
