@@ -1,22 +1,21 @@
-<h2 mat-dialog-title>{{order.title}}</h2>
-<mat-dialog-content class="mat-typography">
-  <div class="card" style="width: 100%">
-    <div class="card-header"> {{order.author}}, {{order.publisher}} </div>
+<h2 mat-dialog-title x148223540722-x-test-tpl-1>{{order.title}}</h2><mat-dialog-content class="mat-typography" x148223540722-x-test-tpl-2>
+  <div class="card" style="width: 100%" x148223540722-x-test-hook-3>
+    <div class="card-header" x148223540722-x-test-hook-4> {{order.author}}, {{order.publisher}} </div>
 
-    <div class="card-body">
-      <div class="row">
-        <div class="col-sm-2">
+    <div class="card-body" x148223540722-x-test-hook-5>
+      <div class="row" x148223540722-x-test-hook-6>
+        <div class="col-sm-2" x148223540722-x-test-hook-7>
           <img src="{{order.img}}"
-               class="img-thumbnail" style="width: 150px; height: 250px">
+               class="img-thumbnail" style="width: 150px; height: 250px" x148223540722-x-test-hook-8>
         </div>
-        <div class="col">
-          <div class="row">
+        <div class="col" x148223540722-x-test-hook-9>
+          <div class="row" x148223540722-x-test-hook-10>
             {{order.description}}
           </div>
-          <div class="row">
-            <div class="col">
-              <div class="row">
-                <p> Quantity: {{order.quantity}} </p>
+          <div class="row" x148223540722-x-test-hook-11>
+            <div class="col" x148223540722-x-test-hook-12>
+              <div class="row" x148223540722-x-test-hook-13>
+                <p x148223540722-x-test-hook-14> Quantity: {{order.quantity}} </p>
               </div>
               <p style="color: green" *ngIf="order.shipped" class="card-text" x132880204046-x-test-hook-11>Order shipped! <img
                 src="https://img.icons8.com/material-outlined/24/000000/shipped.png" x132880204046-x-test-hook-12></p>
@@ -26,16 +25,16 @@
               <button *ngIf="!order.shipped" class="btn btn-danger" (click)="deleteOrder(order)" x132880204046-x-test-hook-15>
                 Delete order
               </button>
-              <div class="row">
-                <div style="display: inline-block">
-                  <div class="col" style="width: auto;">
-                    <div class="row">
+              <div class="row" x148223540722-x-test-hook-20>
+                <div style="display: inline-block" x148223540722-x-test-hook-21>
+                  <div class="col" style="width: auto;" x148223540722-x-test-hook-22>
+                    <div class="row" x148223540722-x-test-hook-23>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col">
+            <div class="col" x148223540722-x-test-hook-24>
             </div>
           </div>
         </div>
@@ -44,4 +43,4 @@
   </div>
 
 </mat-dialog-content>
-<mat-dialog-actions align="end">
+<mat-dialog-actions align="end" x148223540722-x-test-tpl-25>
